@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    restart: always
+    container_name: backend-container
+
+  frontend:
+    build:
+      context: ./frontend
+    env_file:
+      - ./frontend/.env
+    ports:
+      - "3000:80" # Frontend accessible at localhost:3000
+    restart: always
+    container_name: frontend-container
+    depends_on:
+      - backend
+
+  nginx:
+    image: nginx:1.23.3
+    ports:
+      - "8080:80" # Access NGINX at localhost:8080
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+      - frontend
+    restart: always
+    container_name: nginx-container

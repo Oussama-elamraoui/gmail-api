@@ -1,0 +1,123 @@
+/* Container for the email list */
+.email-list-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Title styling */
+.email-list-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* Email list container */
+.email-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Individual email list item */
+.email-list-item {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 4px;
+    margin: 8px 0;
+}
+
+/* Hover and focus state for email list item */
+.email-list-item:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+}
+
+.email-list-item:focus {
+    outline: 2px solid #ffa500;
+}
+
+/* Email snippet styling */
+.email-snippet {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Thread ID styling */
+.email-thread-id {
+    font-size: 0.875rem;
+    color: #888;
+}
+
+/* Pagination container */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Pagination buttons */
+.pagination-btn {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    font-size: 1rem;
+    padding: 6px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Active pagination button */
+.pagination-btn.active {
+    background-color: #ffa500;
+    color: #fff;
+    border-color: #ffa500;
+}
+
+/* Hover state for pagination buttons */
+.pagination-btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .email-list-container {
+        padding: 8px;
+    }
+
+    .email-list-title {
+        font-size: 1.25rem;
+    }
+
+    .email-snippet {
+        font-size: 0.875rem;
+    }
+
+    .email-thread-id {
+        font-size: 0.75rem;
+    }
+
+    .pagination-btn {
+        font-size: 0.875rem;
+        padding: 4px 8px;
+    }
+}

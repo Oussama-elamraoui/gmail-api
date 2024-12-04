@@ -1,0 +1,145 @@
+.email-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.email-thread {
+    margin-bottom: 20px;
+}
+
+.email-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.email-item.odd {
+    background-color: #f1f1f1;
+}
+
+.email-body {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #fdfdfd;
+    border-radius: 4px;
+    border: 1px solid #e1e1e1;
+    white-space: pre-line;
+}
+
+.email-timestamp {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.reply-form {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the form horizontally */
+    justify-content: center; /* Centers the form vertically */
+    height: auto; /* Adjust this if needed, ensures the form occupies the full viewport height */
+    margin: 0 auto; /* Centers the form within its container */
+}
+
+.reply-input {
+    min-height: 100px;
+    width: 700px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    /* resize: none; */
+}
+
+
+.reply-button:hover {
+    background-color: #0056b3;
+}
+
+.response-zone {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    background-color: #f9f9f9;
+}
+
+.response-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.ai-generate-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.ai-generate-button:hover {
+    background-color: #45a049;
+}
+
+.ai-generate-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    color: #666666;
+}
+
+.reply-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .reply-input {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+} */
+
+.reply-button {
+    background-color: #FFA500;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.reply-button:hover {
+    background-color: #e59400;
+}
+
+.reply-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    color: #666666;
+}
+
+.loader {
+    font-size: 16px;
+    color: #666666;
+    text-align: center;
+}
