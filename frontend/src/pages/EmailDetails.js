@@ -60,6 +60,7 @@ const EmailDetails = () => {
     const generateAIResponse = async () => {
         setIsLoading(true);
         setReplyMessage(""); // Clear the zone text while loading
+        console.log(emailDetails)
         const formattedThread = emailDetails
         .map(
             (email, index) =>
@@ -77,7 +78,8 @@ const EmailDetails = () => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    threadDetails: formattedThread , // Send the thread details
+                    threadDetails: formattedThread, // Send the thread details
+                    from: emailDetails[0].from
                 }),
             });
             const data = await res.json();

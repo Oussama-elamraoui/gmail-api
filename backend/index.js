@@ -34,7 +34,7 @@ const url = oauth2Client.generateAuthUrl({
     prompt: 'consent'
 });
 
-// home page
+
 
 // API
 app.get('/', async (req, res) => {
@@ -270,26 +270,25 @@ let model;
 
 
 app.post('/generate-response', async(req,res)=>{
-    const  {threadDetails}=req.body;
+    const  {threadDetails,from}=req.body;
     if (!threadDetails) {
         return res.status(400).json({ error: "Client email with body is required" });
     }
     try{
         const prompt = `
-        You are a professional email assistant. Review the provided email thread and craft a professional and appropriate response to the last email in the thread. Do not include a subject. 
+            You are a professional email assistant. Review the provided email thread and craft a professional and appropriate response to the last email in the thread. Do not include a subject.
 
-        Author's name: "${process.env.AUTHOR_NAME}"
-        Email Thread: "${threadDetails}"
+            Sender's name: "${process.env.AUTHOR_NAME}"
+            Email Thread: "${threadDetails}"
+            The email is being sent to: "${from}"
 
-        Your response should maintain a formal tone and address any queries or concerns raised in the last email.
+            Your response should maintain a formal tone and address any queries or concerns raised in the last email.
         `;
     const response = await run(prompt)
     res.json(response)
     }catch{
        res.status(400).json({ error: "Sorry something wrong!" });
     }
-
-
 });
 async function run(prompt) {
     const result = await model.generateContent(prompt);
