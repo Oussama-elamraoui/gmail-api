@@ -32,9 +32,10 @@ const EmailList = ({ emails }) => {
                         key={email.id}
                         onClick={() => handleEmailClick(email.threadId)}
                         className="email-list-item"
-                    >
+                    >   
+                        <p className="email-from">{email.from}</p>
                         <p className="email-snippet">{email.snippet}</p>
-                        <p className="email-thread-id">Thread ID: {email.id}</p>
+                        <p className="email-thread-id">{email.timestamp}</p>
                     </li>
                 ))}
             </ul>

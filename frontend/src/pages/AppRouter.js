@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,HashRouter } from "react-router-dom";
 import Home from "./Home";
 import Navbar from "../components/Navbar";
 import EmailSelection from "./EmailSelection"
 import EmailDetails from "./EmailDetails";
 const Navigation = () => {
     return (
-        <Router>
+        <HashRouter>
             <Navbar />
             <div className="bg-gray-100 min-h-screen">
                 <Routes>
@@ -15,7 +15,7 @@ const Navigation = () => {
                     <Route path="/email/:id" element={<EmailDetails />} />
                 </Routes>
             </div>
-        </Router>
+        </HashRouter>
     );
 };
 

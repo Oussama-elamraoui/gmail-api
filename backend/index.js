@@ -31,7 +31,7 @@ const scopes = ['https://www.googleapis.com/auth/gmail.readonly','https://www.go
 const url = oauth2Client.generateAuthUrl({
     access_type:'offline',
     scope:scopes,
-    prompt: 'consent'
+    // prompt: 'consent'
 });
 
 
